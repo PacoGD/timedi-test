@@ -16,7 +16,7 @@ export function PageNavigation({
   ) => void;
 }) {
   return (
-    <Box display="flex" justifyContent="center">
+    <Box data-testid="page-navigation" display="flex" justifyContent="center">
       <Pagination
         count={Math.ceil(repositories.length / itemsPerPage)}
         page={page}

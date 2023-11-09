@@ -9,7 +9,7 @@ export const RepositoryList = ({
   repositories: Repository[];
 }) => {
   return (
-    <Container>
+    <Container data-testid="repository-list">
       <Masonry columns={3}>
         {repositories.map((repository: Repository, index: React.Key) => (
           <RepositoryCard key={index} repository={repository} />

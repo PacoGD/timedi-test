@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS Github Repository Search App
+
+This project is a Next.js application with TypeScript that allows you to search and explore GitHub repositories. It includes the following features:
+
+## Features
+
+### 1. GitHub Repository Search
+
+The application provides a GitHub repository search functionality that connects to the GitHub API and returns paginated results. For more information on the GitHub Search API, refer to [GitHub Search API Documentation](https://docs.github.com/en/rest/search?apiVersion=2022-11-28#search-repositories).
+
+### 2. Display Search Results
+
+The search results are displayed in a paginated list, showing the following details for each repository:
+
+- Owner's Name
+- Repository Name and Description
+- Owner's Avatar Image
+- Creation Date and Last Update Date
+- Topics of the Repository
+- Repository Language
+- Number of Stars
+
+### 3. Clickable Repository Items
+
+Each repository item in the list is clickable. Clicking on an item opens the corresponding GitHub repository URL in a new tab.
 
 ## Getting Started
 
-First, run the development server:
+To run the application locally, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/nextjs-github-repo-search.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd nextjs-github-repo-search
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Run the application:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Visit [http://localhost:3000](http://localhost:3000) in your browser to access the application.
+
+## Folder Structure
+
+The project structure follows these conventions:
+
+- `app`: Contains the Next application.
+- `__tests__`: Houses tests throughout the entire application.
+- `ui`: Houses reusable components.
+- `lib`: Contains shared functions and utilities, as well as data fetching functions.
+
+## Testing
+
+Testing is an essential aspect of this project. Use the following command to run unit tests:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm test
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

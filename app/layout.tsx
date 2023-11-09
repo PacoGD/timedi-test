@@ -7,7 +7,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "TiMedi Test App",
   description: "GitHub Repository Searcher",
-  icons: [{ rel: "icon", url: "/bullseye.png" }],
 };
 
 export default function RootLayout({

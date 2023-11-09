@@ -24,7 +24,7 @@ export const RepositoryCard = ({ repository }: { repository: Repository }) => {
       href={repository.html_url}
       target="_blank"
       rel="noopener noreferrer"
-      style={listItemStyle}
+      sx={listItemStyle}
     >
       <ListItem>
         <ListItemAvatar>
@@ -35,12 +35,15 @@ export const RepositoryCard = ({ repository }: { repository: Repository }) => {
         </ListItemAvatar>
         <ListItemText
           primary={
-            <span style={{ textDecoration: "underline", color: "primary" }}>
+            <Typography
+              component="div"
+              sx={{ textDecoration: "underline", color: "primary" }}
+            >
               {repository.name}
-            </span>
+            </Typography>
           }
           secondary={
-            <Grid container spacing={1} style={{ flexDirection: "column" }}>
+            <Grid container spacing={1} sx={{ flexDirection: "column" }}>
               <Grid item>
                 <Typography variant="body2" color="primary">
                   Created:{" "}
@@ -70,7 +73,7 @@ export const RepositoryCard = ({ repository }: { repository: Repository }) => {
                     label={topic}
                     variant="outlined"
                     color="primary"
-                    style={{ margin: "2px" }}
+                    sx={{ margin: "2px" }}
                   />
                 ))}
               </Grid>

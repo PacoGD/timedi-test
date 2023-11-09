@@ -14,6 +14,7 @@ import { SearchBar } from "./ui/search-bar";
 import { About } from "./ui/about";
 import { PageNavigation } from "./ui/pagination";
 import { RepositoryList } from "./ui/repository-list";
+import { paginate } from "./lib/utils";
 
 const theme = createTheme({
   palette: {
@@ -29,6 +30,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const itemsPerPage = 10;
+  const displayedRepositories = paginate(repositories, page, itemsPerPage);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -43,19 +45,11 @@ export default function Home() {
     setSearchQuery(event.target.value);
   };
 
-  const startIndex = (page - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const displayedRepositories = repositories.slice(startIndex, endIndex);
-
   const handlePageChange = (
     event: React.ChangeEvent<unknown>,
     newPage: number
   ) => {
     setPage(newPage);
-  };
-
-  const clearList = () => {
-    setRepositories([]);
   };
 
   return (
@@ -66,7 +60,7 @@ export default function Home() {
             searchText={searchQuery}
             onSearchChange={handleInputChange}
             onSearchSubmit={handleSubmit}
-            clearText={clearList}
+            clearText={() => setRepositories([])}
             repositories={repositories}
           />
           <div
@@ -86,7 +80,7 @@ export default function Home() {
             )}
           </div>
         </Box>
-        {repositories.length > itemsPerPage && (
+        {repositories.length > 0 && (
           <PageNavigation
             repositories={repositories}
             itemsPerPage={itemsPerPage}

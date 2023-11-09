@@ -25,6 +25,7 @@ export const SearchBar = ({
   return (
     <AppBar
       position="static"
+      data-testid="search-bar"
       style={{
         backgroundColor: "black",
       }}
@@ -45,7 +46,7 @@ export const SearchBar = ({
               Clear
             </Button>
           )}
-          <form onSubmit={onSearchSubmit}>
+          <form onSubmit={onSearchSubmit} data-testid="search-form">
             <TextField
               variant="standard"
               onChange={onSearchChange}
@@ -54,6 +55,7 @@ export const SearchBar = ({
               style={{ marginRight: "8px", marginLeft: "8px" }}
               inputProps={{
                 style: { color: "white" },
+                "data-testid": "search-input",
               }}
               focused
               color="primary"
