@@ -17,6 +17,7 @@ export const About = () => {
         alt="GitHub Repositories Logo"
         width={200}
         height={200}
+        priority
       />
       <Typography variant="h4" gutterBottom>
         Search for Super Cool Repositories!

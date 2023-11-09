@@ -35,49 +35,65 @@ export const RepositoryCard = ({ repository }: { repository: Repository }) => {
         </ListItemAvatar>
         <ListItemText
           primary={
-            <Typography
-              component="div"
-              sx={{ textDecoration: "underline", color: "primary" }}
-            >
-              {repository.name}
-            </Typography>
-          }
-          secondary={
-            <Grid container spacing={1} sx={{ flexDirection: "column" }}>
-              <Grid item>
-                <Typography variant="body2" color="primary">
-                  Created:{" "}
-                  {formatDistanceToNowfromDate(repository.created_at) || "-"}
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography variant="body2" color="primary">
-                  Updated:{" "}
-                  {formatDistanceToNowfromDate(repository.updated_at) || "-"}
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography variant="body2" color="primary">
-                  Language: {repository.language || "-"}
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography variant="body2" color="primary">
-                  Stars: {repository.stargazers_count || "-"}
-                </Typography>
-              </Grid>
-              <Grid item>
-                {repository.topics.map((topic: string, index: React.Key) => (
-                  <Chip
-                    key={index}
-                    label={topic}
-                    variant="outlined"
+            <>
+              <Typography
+                component="div"
+                sx={{ textDecoration: "underline", color: "primary" }}
+              >
+                {repository.name}
+              </Typography>
+              <Grid container spacing={1} sx={{ flexDirection: "column" }}>
+                <Grid item>
+                  <Typography
+                    component={"span"}
+                    variant="body2"
                     color="primary"
-                    sx={{ margin: "2px" }}
-                  />
-                ))}
+                  >
+                    Created:{" "}
+                    {formatDistanceToNowfromDate(repository.created_at) || "-"}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography
+                    component={"span"}
+                    variant="body2"
+                    color="primary"
+                  >
+                    Updated:{" "}
+                    {formatDistanceToNowfromDate(repository.updated_at) || "-"}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography
+                    component={"span"}
+                    variant="body2"
+                    color="primary"
+                  >
+                    Language: {repository.language || "-"}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography
+                    component={"span"}
+                    variant="body2"
+                    color="primary"
+                  >
+                    Stars: {repository.stargazers_count || "-"}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  {repository.topics.map((topic: string, index: React.Key) => (
+                    <Chip
+                      key={index}
+                      label={topic}
+                      variant="outlined"
+                      color="primary"
+                      sx={{ margin: "2px" }}
+                    />
+                  ))}
+                </Grid>
               </Grid>
-            </Grid>
+            </>
           }
         />
       </ListItem>
