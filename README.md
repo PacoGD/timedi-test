@@ -28,31 +28,19 @@ Each repository item in the list is clickable. Clicking on an item opens the cor
 
 To run the application locally, follow these steps:
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/nextjs-github-repo-search.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd nextjs-github-repo-search
-   ```
-
-3. Install dependencies:
+1. Install dependencies:
 
    ```bash
    npm install
    ```
 
-4. Run the application:
+2. Run the application:
 
    ```bash
    npm run dev
    ```
 
-5. Visit [http://localhost:3000](http://localhost:3000) in your browser to access the application.
+3. Visit [http://localhost:3000](http://localhost:3000) in your browser to access the application.
 
 ## Folder Structure
 
